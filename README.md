@@ -1,12 +1,17 @@
 # Pitchfork Scrap
+<br>
 
 Pitchfork Scrap is a Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) and perform data analysis on the collected information. The project utilizes the `BeautifulSoup` library for web scraping and allows users to gather and analyze music reviews and other related data from the Pitchfork website.
+
+<br>
 
 ## Features
 
 - Scrapes music reviews and other data from Pitchfork.com.
 - Stores the scraped data in a PostgreSQL database.
 - Prevents duplicate data insertion using `ON CONFLICT` handling in PostgreSQL.
+  
+<br>
 
 ## Technologies Used
 
@@ -16,6 +21,7 @@ Pitchfork Scrap is a Python project designed to scrape data from [Pitchfork](htt
 - [SQLAlchemy](https://www.sqlalchemy.org/) – For database interaction and ORM.
 - [PostgreSQL](https://www.postgresql.org/) – As the database to store scraped data.
 
+<br>
 
 ## Setup Instructions
 
@@ -45,6 +51,7 @@ Pitchfork Scrap is a Python project designed to scrape data from [Pitchfork](htt
       DB_HOST=localhost
       DB_PORT=5432
       ```
+<br>
 
 ## Usage
 
@@ -52,7 +59,7 @@ Pitchfork Scrap is a Python project designed to scrape data from [Pitchfork](htt
     ```bash
     python main.py
     ```
-
+    
 <br>
 
 ## Contact
