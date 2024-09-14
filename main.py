@@ -1,72 +1,27 @@
-import re
-
-import requests
-from bs4 import BeautifulSoup
-
-URL_DOMAIN = "https://pitchfork.com/reviews/albums/"
+from pitchfork_scraper.scrap import get_main_soup, get_review_link, \
+    get_review_data
 
 
-def get_main_soup(url):
+def main():
 
-    response = requests.get(url)
-    main_soup = BeautifulSoup(response.text, "html.parser")
+    url = "https://pitchfork.com/reviews/albums/"
+    page_nb = 1
 
-    return main_soup
-
-
-def get_review_link(soup):
-
-    a_list = soup.find_all("a",
-                           class_="SummaryItemHedLink-civMjp PNQqc summary-"
-                                  "item-tracking__hed-link summary-item__"
-                                  "hed-link summary-item__hed-link--"
-                                  "underline-disable")
-
-    return a_list
-
-
-def get_review_data(urls):
-
-    reviews_list = []
-
-    for url in urls:
-
-        valid_links = f"https://pitchfork.com{url["href"]}"
-        # print(valid_links)
-
-        soup = get_main_soup(valid_links)
-
+    while True:
         try:
-            artist = soup.find("div", class_=re.compile(
-                "^BaseWrap-sc-gjQpdd BaseText-ewhhUZ "
-                "SplitScreenContentHeaderArtist")).text
 
-            album = soup.find("h1", class_=re.compile(
-                "^BaseWrap-sc-gjQpdd BaseText-ewhhUZ "
-                "SplitScreenContentHeaderHed")).text
+            print(f"Page {page_nb} in progress...")
+            main_soup = get_main_soup(url)
+            albums_links = get_review_link(main_soup)
 
-            rating = soup.find("p", class_=re.compile(
-                "^BaseWrap-sc-gjQpdd BaseText-ewhhUZ Rating")).text
+            get_review_data(albums_links)
+            page_nb += 1
 
-            release_date = soup.find("time", class_=re.compile(
-                "^SplitScreenContentHeaderReleaseYear")).text
+            url = f"https://pitchfork.com/reviews/albums/?page={page_nb}"
 
-            genre = soup.find("p", class_=re.compile(
-                "^BaseWrap-sc-gjQpdd BaseText-ewhhUZ InfoSliceValue")).text
-
-            review = f"{artist} - {album} : {rating}"
-            print(review)
-            print(release_date)
-            print(genre)
-            reviews_list.append(review)
-            
-        except:
-            print(f"error with{valid_links}")
-
-    return reviews_list
+        except Exception as e:
+            print(e)
 
 
-main_soup = get_main_soup(URL_DOMAIN)
-albums_links = get_review_link(main_soup)
-
-reviews = get_review_data(albums_links)
+if __name__ == "__main__":
+    main()
