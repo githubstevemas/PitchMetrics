@@ -1,36 +1,56 @@
 from sqlalchemy.dialects.postgresql import insert
 
-from pitchfork_scraper.models import Album, Artist
+from pitchfork_scraper.models import Album, Artist, Country, Label
 
 
-def insert_albums(session, album_data):
+def insert_label(session, label_name):
+
+    stmt = insert(Label).values({'name': label_name})
+    stmt = stmt.on_conflict_do_nothing(index_elements=['name'])
+
+    session.execute(stmt)
+    session.commit()
+
+    return session.query(Label).filter_by(name=label_name).first().id
+
+
+def insert_country(session, country_name):
+
+    stmt = insert(Country).values({'name': country_name})
+    stmt = stmt.on_conflict_do_nothing(index_elements=['name'])
+
+    session.execute(stmt)
+    session.commit()
+
+    return session.query(Country).filter_by(name=country_name).first().id
+
+
+def insert_album(session, album_data, label_id):
 
     stmt = insert(Album).values({
         'name': album_data['name'],
         'genre': album_data['genre'],
         'release_date': album_data['release_date'],
         'rating': album_data['rating'],
-        'artist_id': album_data['artist_id']
+        'artist_id': album_data['artist_id'],
+        'label_id': label_id
     })
 
     stmt = stmt.on_conflict_do_nothing(index_elements=['name', 'artist_id'])
 
-    result = session.execute(stmt)
+    session.execute(stmt)
     session.commit()
 
-    if result.rowcount == 0:
-        print(f"Album {album_data['name']} already insert.")
-    else:
-        print(f"Album {album_data['name']} successfully insert.")
 
+def insert_artist(session, artist):
 
-def insert_artists(session, artist):
-
-    stmt = insert(Artist).values({'name': artist})
-
-    stmt = stmt.on_conflict_do_nothing(index_elements=['name'])
+    stmt = insert(Artist).values({
+        'name': artist['name'],
+        'country_id': artist['country_id']
+    })
+    stmt = stmt.on_conflict_do_nothing(index_elements=["name"])
 
     session.execute(stmt)
     session.commit()
 
-    return session.query(Artist).filter_by(name=artist).first()
+    return session.query(Artist).filter_by(name=artist['name']).first().id
