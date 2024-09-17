@@ -1,13 +1,13 @@
-# Pitchfork Scrap
+# PitchMetrics
 <br>
 
-Pitchfork Scrap is a Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) and perform data analysis on the collected information. The project utilizes the `BeautifulSoup` library for web scraping and allows users to gather and analyze music reviews and other related data from the Pitchfork website.
+Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) and [Musicbrainz](https://musicbrainz.org) then perform data analysis on the collected information. The project utilizes the `BeautifulSoup` library for web scraping and allows users to gather and analyze music reviews and other related data.
 
 <br>
 
 ## Features
 
-- Scrapes music reviews and other data from Pitchfork.com.
+- Scrapes music reviews and other data from Pitchfork.com and Musicbrainz.org.
 - Stores the scraped data in a PostgreSQL database.
 - Prevents duplicate data insertion using `ON CONFLICT` handling in PostgreSQL.
   
