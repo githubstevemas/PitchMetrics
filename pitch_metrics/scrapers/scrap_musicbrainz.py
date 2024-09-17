@@ -3,7 +3,7 @@
 
 import re
 
-from pitchfork_scraper.soup import get_main_soup
+from pitch_metrics.scrapers.soup import get_main_soup
 
 
 def get_artist_data(artist):

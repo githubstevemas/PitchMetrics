@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, ForeignKey, \
     UniqueConstraint
 from sqlalchemy.orm import relationship, sessionmaker
 
-from pitchfork_scraper.config import Base, engine
+from pitch_metrics.scrapers.config import Base, engine
 
 
 class Artist(Base):

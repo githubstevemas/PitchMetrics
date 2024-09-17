@@ -1,7 +1,7 @@
-from pitchfork_scraper.insert import insert_album, insert_label
-from pitchfork_scraper.models import session
-from pitchfork_scraper.scrap_musicbrainz import get_album_label
-from pitchfork_scraper.scrap_pitchfork import get_main_soup, get_review_link, \
+from pitch_metrics.scrapers import insert_album, insert_label
+from pitch_metrics.stats.models import session
+from pitch_metrics.scrapers import get_album_label
+from pitch_metrics.scrapers import get_main_soup, get_review_link, \
     get_review_data
 
 

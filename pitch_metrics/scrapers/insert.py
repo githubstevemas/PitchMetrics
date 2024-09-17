@@ -1,6 +1,6 @@
 from sqlalchemy.dialects.postgresql import insert
 
-from pitchfork_scraper.models import Album, Artist, Country, Label
+from pitch_metrics.stats.models import Album, Artist, Country, Label
 
 
 def insert_label(session, label_name):

@@ -1,9 +1,9 @@
 import re
 
-from pitchfork_scraper.insert import insert_artist, insert_country
-from pitchfork_scraper.models import session
-from pitchfork_scraper.scrap_musicbrainz import get_artist_data
-from pitchfork_scraper.soup import get_main_soup
+from pitch_metrics.scrapers.insert import insert_artist, insert_country
+from pitch_metrics.stats.models import session
+from pitch_metrics.scrapers.scrap_musicbrainz import get_artist_data
+from pitch_metrics.scrapers.soup import get_main_soup
 
 
 def get_review_link(soup):
