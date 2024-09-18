@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pitch Metrics</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
-</head>
-<body>
+{% extends "pitch_metrics/base.html" %}
 
-<header>
+{% block title %}
+    Pitch Metrics
+{% endblock %}
 
-    <span id="title">
-        <a class="link-home" href="{% url 'index' %}">
-            Pitch Metrics
-        </a>
-    </span>
+{% block extra_head %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
 
-</header>
+{% block content %}
 
-
-<div class="hero-container">
-    <span class="hero-text">dive<br>into the data<br>behind<br>every beat</span>
-    <img class="hero-image" src="static/images/pitch_metrics_hero2.png" alt="hero">
-</div>
-
-
-<footer>
-    <div>
+    <div class="hero-container">
+        <span class="hero-text">dive<br>into the data<br>behind<br>every beat</span>
+        <img class="hero-image" src="static/images/pitch_metrics_hero2.png" alt="hero">
     </div>
-</footer>
-</body>
-</html>
+
+
+    <div class="chart-container">
+        <div class="chart-background-title">Number of Albums per Genre</div>
+        <div class="plotly-graph">
+            {{ chart1|safe }}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Pitch Metrics{% endblock %}</title>
+    {% block extra_head %}{% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+</head>
+<body>
+
+<header>
+
+    <span id="title">
+        <a class="link-home" href="{% url 'index' %}">
+            Pitch Metrics
+        </a>
+    </span>
+
+    <span class="header-menu">
+
+        <a class="menu-button" href="">
+            menu
+        </a>
+
+        <a class="menu-button" href="">
+            menu
+        </a>
+
+        <a class="menu-button" href="">
+            menu
+        </a>
+
+    </span>
+
+</header>
+
+{% block content %}{% endblock %}
+
+<footer>
+    <div>© Pitch Metrics 2024 - All rights reserved</div>
+</footer>
+</body>
+</html>
