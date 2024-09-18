@@ -1,7 +1,7 @@
 # PitchMetrics
 <br>
 
-Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) and [Musicbrainz](https://musicbrainz.org) then perform data analysis on the collected information. The project utilizes the `BeautifulSoup` library for web scraping and `plotly` for grahpics to gather and analyze music reviews and other related data.
+Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) and [Musicbrainz](https://musicbrainz.org), store it in a SQL database, and perform data analysis on the collected information. The project utilizes the BeautifulSoup library for web scraping, SQL for data storage and querying, and Plotly for visualizing music reviews and other related data.
 
 <br>
 
