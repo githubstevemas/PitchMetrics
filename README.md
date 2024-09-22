@@ -1,7 +1,7 @@
 # PitchMetrics
 <br>
 
-Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) and [Musicbrainz](https://musicbrainz.org) then perform data analysis on the collected information. The project utilizes the `BeautifulSoup` library for web scraping and allows users to gather and analyze music reviews and other related data.
+Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) and [Musicbrainz](https://musicbrainz.org), store it in a SQL database, and perform data analysis on the collected information. The project utilizes the BeautifulSoup library for web scraping, SQL for data storage and querying, and Plotly for visualizing music reviews and other related data.
 
 <br>
 
@@ -10,6 +10,7 @@ Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) 
 - Scrapes music reviews and other data from Pitchfork.com and Musicbrainz.org.
 - Stores the scraped data in a PostgreSQL database.
 - Prevents duplicate data insertion using `ON CONFLICT` handling in PostgreSQL.
+- Displays graphical analyzes.
   
 <br>
 
@@ -20,6 +21,7 @@ Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) 
 - [Requests](https://pypi.org/project/requests/) – For handling HTTP requests to retrieve web pages.
 - [SQLAlchemy](https://www.sqlalchemy.org/) – For database interaction and ORM.
 - [PostgreSQL](https://www.postgresql.org/) – As the database to store scraped data.
+- [Plotly](https://plotly.com/) - To display dynamic charts.
 
 <br>
 
@@ -55,11 +57,20 @@ Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) 
 
 ## Usage
 
-*Run with*:
-    ```bash
+1. *First you need to scrape datas with*:
+    ```
     python main.py
     ```
-    
+
+2. *Run django server*:
+    ```
+    cd .\pitch_metrics\
+    python manage.py runserver
+    ```
+
+3. *You can test the app localy in your browser at [http://127.0.0.1:8000](http://127.0.0.1:8000/).*
+
+
 <br>
 
 ## Contact
