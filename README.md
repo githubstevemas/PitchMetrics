@@ -10,6 +10,7 @@ Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) 
 - Scrapes music reviews and other data from Pitchfork.com and Musicbrainz.org.
 - Stores the scraped data in a PostgreSQL database.
 - Prevents duplicate data insertion using `ON CONFLICT` handling in PostgreSQL.
+- Explore music db.
 - Displays graphical analyzes.
   
 <br>
@@ -22,6 +23,7 @@ Python project designed to scrape data from [Pitchfork](https://pitchfork.com/) 
 - [SQLAlchemy](https://www.sqlalchemy.org/) – For database interaction and ORM.
 - [PostgreSQL](https://www.postgresql.org/) – As the database to store scraped data.
 - [Plotly](https://plotly.com/) - To display dynamic charts.
+- [JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript) - For dynamic displays in templates. 
 
 <br>
 
