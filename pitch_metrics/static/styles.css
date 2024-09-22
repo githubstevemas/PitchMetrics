@@ -17,6 +17,7 @@ body {
     background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-height: 95vh;
     margin: 0;
@@ -50,6 +51,12 @@ h1{
 
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 .header-menu{
     margin-left: 100px;
     margin-bottom: 9px;
@@ -74,6 +81,13 @@ h1{
     margin-left: 10px;
 }
 
+.label-button {
+    text-decoration: none;
+    color: #323236;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
 .page-title {
     align-self: flex-start;
     margin-left: 25%;
@@ -95,6 +109,41 @@ h1{
     height: 350px;
     width: 100%;
     margin-top: 200px;
+}
+
+.main-explore-container {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 900px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.labels-list-container {
+    width: 350px;
+    height: 350px;
+    border: 1px solid #F7F7F7;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.labels-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+.label-details-container {
+    flex-grow: 1;
+    padding: 40px;
+    width: 400px;
+    overflow-y: auto;
 }
 
 .chart-background-title {
@@ -130,6 +179,13 @@ h1{
     font-size: 60px;
     color: #323236;
     text-align: right;
+}
+
+.title-text {
+    font-family: Sketch_Block;
+    font-size: 28px;
+    margin-top: 200px;
+    color: #323236;
 }
 
 .hero-image {

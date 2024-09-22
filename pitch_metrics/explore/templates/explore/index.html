@@ -1,0 +1,39 @@
+{% extends "pitch_metrics/base.html" %}
+
+{% load static %}
+
+{% block title %}Explore{% endblock title %}
+
+{% block content %}
+
+    <span class="title-text">Labels</span>
+    <div class="main-explore-container">
+
+        {% if labels_list %}
+            <div class="labels-list-container">
+                <ul>
+                    {% for label in labels_list %}
+                        <li class="list-group-item">
+                            <a class="label-button" href="#" data-label-id="{{ label.id }}">{{ label.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <p>No label are available.</p>
+        {% endif %}
+
+        <div class="label-details-container" id="label-details-container">
+
+            <p>blablabla.</p>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="{% static 'js/explore.js' %}"></script>
+{% endblock %}

@@ -1,8 +1,8 @@
-from pitch_metrics.scrapers import insert_album, insert_label
-from pitch_metrics.stats.models import session
-from pitch_metrics.scrapers import get_album_label
-from pitch_metrics.scrapers import get_main_soup, get_review_link, \
-    get_review_data
+from scrapers.insert import insert_label, insert_album
+from scrapers.scrap_musicbrainz import get_album_label
+from scrapers.scrap_pitchfork import get_review_link, get_review_data
+from scrapers.soup import get_main_soup
+from stats.models import session
 
 
 def main():

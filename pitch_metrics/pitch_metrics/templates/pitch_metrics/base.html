@@ -21,16 +21,12 @@
 
     <span class="header-menu">
 
-        <a class="menu-button" href="">
-            menu
+        <a class="menu-button" href="{% url 'explore:explore' %}">
+            explore
         </a>
 
         <a class="menu-button" href="">
-            menu
-        </a>
-
-        <a class="menu-button" href="">
-            menu
+            stats
         </a>
 
     </span>
@@ -42,5 +38,8 @@
 <footer>
     <div>© Pitch Metrics 2024 - All rights reserved</div>
 </footer>
+
+{% block extra_scripts %}{% endblock %}
+
 </body>
 </html>
